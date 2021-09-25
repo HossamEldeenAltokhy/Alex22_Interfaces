@@ -24,6 +24,12 @@
 #define Btn0   0 //PB0
 #define Btn1   6 //PD6
 #define Btn2   2 //PD2
+
+#define _PA    0
+#define _PB    1
+#define _PC    2
+#define _PD    3
+
 void init_Leds();
 void init_Relay();
 void init_Buzzer();
@@ -33,6 +39,9 @@ void set_Relay(int state);
 void set_Led(int LedNumber, int state);
 
 int isPressed_B(int pinNum);
+
+int isPressed(int portNum, int pinNum);
+
 int main(void) {
     /* Replace with your application code */
     // Initialization.....
@@ -41,14 +50,20 @@ int main(void) {
     init_Leds();
     init_Buttons();
     // Set Data for Relay
-    set_Relay(ON);
     
 
+
     while (1) {
-        if(isPressed_B(Btn0)){
+        //if (isPressed_B(Btn0)) 
+        if(isPressed(_PB, Btn0)){
             set_Led(Led0, ON);
-        }else{
+        } else {
             set_Led(Led0, OFF);
+        }
+        if(isPressed(_PD, Btn1)){
+            set_Relay(ON);
+        }else{
+            set_Relay(OFF);
         }
     }
 
@@ -56,11 +71,13 @@ int main(void) {
 }
 
 void init_Leds() {
+    // Define  Data Direction as OUTPUT for each pin connected to LED
     DDRC |= (1 << Led0) | (1 << Led1);
     DDRD |= (1 << Led2);
 }
 
 void init_Relay() {
+    // Define as OUTPUT
     DDRA |= (1 << Relay); // PINA 2 OUTPUT (Relay)
 }
 
@@ -82,7 +99,7 @@ void set_Led(int LedNumber, int state) {
     if (state) {
         switch (LedNumber) {
             case Led0:
-                PORTC |= (1 << Led0);
+                PORTC |= (1 << Led0); // LED 0  >> ON
                 break;
             case Led1:
                 PORTC |= (1 << Led1);
@@ -94,7 +111,7 @@ void set_Led(int LedNumber, int state) {
     } else {
         switch (LedNumber) {
             case Led0:
-                PORTC &= ~(1 << Led0);
+                PORTC &= ~(1 << Led0); // LED 0 >> OFF
                 break;
             case Led1:
                 PORTC &= ~(1 << Led1);
@@ -110,20 +127,59 @@ void set_Led(int LedNumber, int state) {
 
 }
 
-
-void init_Buttons(){
-    
-    DDRB &= ~(1<<Btn0);
-    DDRD &= ~(1<<Btn1);
-    DDRD &= ~(1<<Btn2);
+void init_Buttons() {
+    // Define PINs connected to BUTTONS as INPUT
+    DDRB &= ~(1 << Btn0);
+    DDRD &= ~(1 << Btn1);
+    DDRD &= ~(1 << Btn2);
 
 }
 
-int isPressed_B(int pinNum){
-    if(PINB & (1<<pinNum)){
+int isPressed_B(int pinNum) {
+    if (PINB & (1 << pinNum)) {
         return 1;
-    }
-    else{
+    } else {
         return 0;
     }
 }
+
+int isPressed(int portNum, int pinNum) {
+
+    switch (portNum) {
+        case _PA:
+            return (PINA & (1 << pinNum)) ? 1 : 0;
+            break;
+        case _PB:
+            return (PINB & (1 << pinNum)) ? 1 : 0;
+            break;
+        case _PC:
+            return (PINC & (1 << pinNum)) ? 1 : 0;
+            break;
+        case _PD:
+            return (PIND & (1 << pinNum)) ? 1 : 0;
+            break;
+        default:
+            return 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
