@@ -36,7 +36,8 @@ void set_Led(int LedNumber, int state) {
                 PORTC |= (1 << Led1);
                 break;
             case Led2:
-                PORTD |= (1 << Led2);
+                //PORTD |= (1 << Led2);
+                setPinData(_PD, Led2, ON);
                 break;
         }
     } else {
@@ -60,10 +61,13 @@ void set_Led(int LedNumber, int state) {
 
 void init_Buttons() {
     // Define PINs connected to BUTTONS as INPUT
-    DDRB &= ~(1 << Btn0);
-    DDRD &= ~(1 << Btn1);
-    DDRD &= ~(1 << Btn2);
+    //    DDRB &= ~(1 << Btn0);
+    //    DDRD &= ~(1 << Btn1);
+    //    DDRD &= ~(1 << Btn2);
 
+    setPinDir(_PB, Btn0, IN);
+    setPinDir(_PD, Btn1, IN);
+    setPinDir(_PD, Btn2, IN);
 }
 
 int isPressed_B(int pinNum) {
@@ -94,51 +98,8 @@ int isPressed(int portNum, int pinNum) {
     }
 }
 
-
-
-
-void _setPortDir(int portNum, int state){
-    if(state){
-        // PORT OUTPUT
-        switch(portNum){
-            case _PA:
-                DDRA = 0xFF;
-                break;
-            case _PB:
-                DDRB = 0xFF;
-                break;
-            case _PC:
-                DDRC = 0xFF;
-                break;
-            case _PD:
-                DDRD = 0xFF;
-                break;
-            default:
-                ;
-                
-        }
-    }else{
-        // PORT INPUT
-        switch(portNum){
-            case _PA:
-                DDRA = 0x00;
-                break;
-            case _PB:
-                DDRB = 0x00;
-                break;
-            case _PC:
-                DDRC = 0x00;
-                break;
-            case _PD:
-                DDRD = 0x00;
-                break;
-            default:
-                ;
-                
-        }
-    }
-}
-void setPortDir(int portNum, int state){
+/**
+ * void setPortDir(int portNum, int state){
     switch(portNum){
             case _PA:
                 DDRA = state? 0xFF: 0x00;
@@ -158,23 +119,193 @@ void setPortDir(int portNum, int state){
         }
 }
 
+ * @param portNum
+ * @param state
+ */
 
-void setPortData(int portNum, int data){
-    switch(portNum){
+void setPortDir(int portNum, int state) {
+    if (state) {
+        // PORT OUTPUT
+        switch (portNum) {
             case _PA:
-                PORTA = data;
+                DDRA = 0xFF;
                 break;
             case _PB:
-                PORTB = data;
+                DDRB = 0xFF;
                 break;
             case _PC:
-                PORTC = data;
+                DDRC = 0xFF;
                 break;
             case _PD:
-                PORTD = data;
+                DDRD = 0xFF;
                 break;
             default:
                 ;
-                
+
         }
+    } else {
+        // PORT INPUT
+        switch (portNum) {
+            case _PA:
+                DDRA = 0x00;
+                break;
+            case _PB:
+                DDRB = 0x00;
+                break;
+            case _PC:
+                DDRC = 0x00;
+                break;
+            case _PD:
+                DDRD = 0x00;
+                break;
+            default:
+                ;
+
+        }
+    }
+}
+
+void setPortData(int portNum, int data) {
+    switch (portNum) {
+        case _PA:
+            PORTA = data;
+            break;
+        case _PB:
+            PORTB = data;
+            break;
+        case _PC:
+            PORTC = data;
+            break;
+        case _PD:
+            PORTD = data;
+            break;
+        default:
+            ;
+
+    }
+}
+
+void togglePortData(int portNum) {
+
+
+    switch (portNum) {
+        case _PA:
+            PORTA ^= 0xFF;
+            break;
+        case _PB:
+            PORTB ^= 0xFF;
+            break;
+        case _PC:
+            PORTC ^= 0xFF;
+            break;
+        case _PD:
+            PORTD ^= 0xFF;
+            break;
+        default:
+            ;
+
+    }
+}
+
+void setPinDir(int portNum, int pinNum, int state) {
+    if (state) {
+        // PORT OUTPUT
+        switch (portNum) {
+            case _PA:
+                DDRA |= (1 << pinNum);
+                break;
+            case _PB:
+                DDRB |= (1 << pinNum);
+                break;
+            case _PC:
+                DDRC |= (1 << pinNum);
+                break;
+            case _PD:
+                DDRD |= (1 << pinNum);
+                break;
+            default:
+                ;
+
+        }
+    } else {
+        // PORT INPUT
+        switch (portNum) {
+            case _PA:
+                DDRA &= ~(1 << pinNum);
+                break;
+            case _PB:
+                DDRB &= ~(1 << pinNum);
+                break;
+            case _PC:
+                DDRC &= ~(1 << pinNum);
+                break;
+            case _PD:
+                DDRD &= ~(1 << pinNum);
+                break;
+            default:
+                ;
+
+        }
+    }
+}
+
+void setPinData(int portNum, int pinNum, int data) {
+    if (data) {
+        switch (portNum) {
+            case _PA:
+                PORTA |= (1 << pinNum);
+                break;
+            case _PB:
+                PORTB |= (1 << pinNum);
+                break;
+            case _PC:
+                PORTC |= (1 << pinNum);
+                break;
+            case _PD:
+                PORTD |= (1 << pinNum);
+                break;
+            default:
+                ;
+
+        }
+    } else {
+        switch (portNum) {
+            case _PA:
+                PORTA &= ~(1 << pinNum);
+                break;
+            case _PB:
+                PORTB &= ~(1 << pinNum);
+                break;
+            case _PC:
+                PORTC &= ~(1 << pinNum);
+                break;
+            case _PD:
+                PORTD &= ~(1 << pinNum);
+                break;
+            default:
+                ;
+
+        }
+    }
+}
+
+void togglePinData(int portNum, int pinNum) {
+    switch (portNum) {
+        case _PA:
+            PORTA ^= (1 << pinNum);
+            break;
+        case _PB:
+            PORTB ^= (1 << pinNum);
+            break;
+        case _PC:
+            PORTC ^= (1 << pinNum);
+            break;
+        case _PD:
+            PORTD ^= (1 << pinNum);
+            break;
+        default:
+            ;
+
+    }
+
 }

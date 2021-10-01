@@ -16,19 +16,23 @@ int main(void) {
     /* Replace with your application code */
     // Initialization.....
    
-    setPortDir(_PA, OUT);
     
     
+    setPinDir(_PA, PA0, OUT);
+    setPinDir(_PC, PC0, IN);
     
+    
+    setPinData(_PA, PA0, OFF);
+  
     
    
     while (1) {
-        //if (isPressed_B(Btn0)) 
-        setPortData(_PA, 0xFF);
-        _delay_ms(500);
-        setPortData(_PA, 0x00);
-        _delay_ms(500);
-            
+
+        if(isPressed(_PC,PC0)){
+           togglePinData(_PA, PA0); 
+           _delay_ms(500);
+        }
+          
     }
 
     return 0;
