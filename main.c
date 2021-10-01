@@ -4,43 +4,13 @@
  *
  * Created on September 24, 2021, 3:26 PM
  */
-#define F_CPU 16000000UL
 
-#include <util/delay.h>
 #include <avr/io.h>
-
-#define Relay  2   // PA2
-#define Buzzer 3   // PA3
+#include "config.h"
 
 
-#define Led0   2   // PC2
-#define Led1   7   // PC7
-#define Led2   3   // PD3
 
 
-#define ON     1
-#define OFF    0
-
-#define Btn0   0 //PB0
-#define Btn1   6 //PD6
-#define Btn2   2 //PD2
-
-#define _PA    0
-#define _PB    1
-#define _PC    2
-#define _PD    3
-
-void init_Leds();
-void init_Relay();
-void init_Buzzer();
-void init_Buttons();
-
-void set_Relay(int state);
-void set_Led(int LedNumber, int state);
-
-int isPressed_B(int pinNum);
-
-int isPressed(int portNum, int pinNum);
 
 int main(void) {
     /* Replace with your application code */
@@ -49,10 +19,7 @@ int main(void) {
     init_Relay();
     init_Leds();
     init_Buttons();
-    // Set Data for Relay
-    
-
-
+   
     while (1) {
         //if (isPressed_B(Btn0)) 
         if(isPressed(_PB, Btn0)){
@@ -69,106 +36,6 @@ int main(void) {
 
     return 0;
 }
-
-void init_Leds() {
-    // Define  Data Direction as OUTPUT for each pin connected to LED
-    DDRC |= (1 << Led0) | (1 << Led1);
-    DDRD |= (1 << Led2);
-}
-
-void init_Relay() {
-    // Define as OUTPUT
-    DDRA |= (1 << Relay); // PINA 2 OUTPUT (Relay)
-}
-
-void init_Buzzer() {
-    DDRA |= (1 << Buzzer); // PINA 3 OUTPUT (Buzzer)
-}
-
-void set_Relay(int state) {
-    if (state) {
-        PORTA |= (1 << Relay); // Relay ON
-    } else {
-        PORTA &= ~(1 << Relay); // Relay OFF
-    }
-}
-
-void set_Led(int LedNumber, int state) {
-
-
-    if (state) {
-        switch (LedNumber) {
-            case Led0:
-                PORTC |= (1 << Led0); // LED 0  >> ON
-                break;
-            case Led1:
-                PORTC |= (1 << Led1);
-                break;
-            case Led2:
-                PORTD |= (1 << Led2);
-                break;
-        }
-    } else {
-        switch (LedNumber) {
-            case Led0:
-                PORTC &= ~(1 << Led0); // LED 0 >> OFF
-                break;
-            case Led1:
-                PORTC &= ~(1 << Led1);
-                break;
-            case Led2:
-                PORTD &= ~(1 << Led2);
-                break;
-        }
-    }
-
-
-
-
-}
-
-void init_Buttons() {
-    // Define PINs connected to BUTTONS as INPUT
-    DDRB &= ~(1 << Btn0);
-    DDRD &= ~(1 << Btn1);
-    DDRD &= ~(1 << Btn2);
-
-}
-
-int isPressed_B(int pinNum) {
-    if (PINB & (1 << pinNum)) {
-        return 1;
-    } else {
-        return 0;
-    }
-}
-
-int isPressed(int portNum, int pinNum) {
-
-    switch (portNum) {
-        case _PA:
-            return (PINA & (1 << pinNum)) ? 1 : 0;
-            break;
-        case _PB:
-            return (PINB & (1 << pinNum)) ? 1 : 0;
-            break;
-        case _PC:
-            return (PINC & (1 << pinNum)) ? 1 : 0;
-            break;
-        case _PD:
-            return (PIND & (1 << pinNum)) ? 1 : 0;
-            break;
-        default:
-            return 0;
-    }
-}
-
-
-
-
-
-
-
 
 
 
