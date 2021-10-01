@@ -23,6 +23,10 @@
 #define ON     1
 #define OFF    0
 
+#define OUT     1
+#define IN      0
+
+
 #define Btn0   0 //PB0
 #define Btn1   6 //PD6
 #define Btn2   2 //PD2

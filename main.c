@@ -15,23 +15,20 @@
 int main(void) {
     /* Replace with your application code */
     // Initialization.....
-    init_Buzzer();
-    init_Relay();
-    init_Leds();
-    init_Buttons();
+   
+    setPortDir(_PA, OUT);
+    
+    
+    
+    
    
     while (1) {
         //if (isPressed_B(Btn0)) 
-        if(isPressed(_PB, Btn0)){
-            set_Led(Led0, ON);
-        } else {
-            set_Led(Led0, OFF);
-        }
-        if(isPressed(_PD, Btn1)){
-            set_Relay(ON);
-        }else{
-            set_Relay(OFF);
-        }
+        setPortData(_PA, 0xFF);
+        _delay_ms(500);
+        setPortData(_PA, 0x00);
+        _delay_ms(500);
+            
     }
 
     return 0;

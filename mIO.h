@@ -27,6 +27,11 @@ int isPressed(int portNum, int pinNum);
 
 
 
+// PORT LEVEL
+void setPortDir(int portNum, int state);
+void setPortData(int portNum, int data);
+
+
 
 #endif	/* MIO_H */
 

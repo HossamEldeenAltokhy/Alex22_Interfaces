@@ -97,6 +97,84 @@ int isPressed(int portNum, int pinNum) {
 
 
 
+void _setPortDir(int portNum, int state){
+    if(state){
+        // PORT OUTPUT
+        switch(portNum){
+            case _PA:
+                DDRA = 0xFF;
+                break;
+            case _PB:
+                DDRB = 0xFF;
+                break;
+            case _PC:
+                DDRC = 0xFF;
+                break;
+            case _PD:
+                DDRD = 0xFF;
+                break;
+            default:
+                ;
+                
+        }
+    }else{
+        // PORT INPUT
+        switch(portNum){
+            case _PA:
+                DDRA = 0x00;
+                break;
+            case _PB:
+                DDRB = 0x00;
+                break;
+            case _PC:
+                DDRC = 0x00;
+                break;
+            case _PD:
+                DDRD = 0x00;
+                break;
+            default:
+                ;
+                
+        }
+    }
+}
+void setPortDir(int portNum, int state){
+    switch(portNum){
+            case _PA:
+                DDRA = state? 0xFF: 0x00;
+                break;
+            case _PB:
+                DDRB = state? 0xFF: 0x00;
+                break;
+            case _PC:
+                DDRC = state? 0xFF: 0x00;
+                break;
+            case _PD:
+                DDRD = state? 0xFF: 0x00;
+                break;
+            default:
+                ;
+                
+        }
+}
 
 
-
+void setPortData(int portNum, int data){
+    switch(portNum){
+            case _PA:
+                PORTA = data;
+                break;
+            case _PB:
+                PORTB = data;
+                break;
+            case _PC:
+                PORTC = data;
+                break;
+            case _PD:
+                PORTD = data;
+                break;
+            default:
+                ;
+                
+        }
+}
