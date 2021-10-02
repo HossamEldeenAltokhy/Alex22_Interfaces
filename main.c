@@ -23,12 +23,23 @@ int main(void) {
     
     _delay_ms(50);
     
+    LCD_write_num(x);
     
     while (1) {
 
-         LCD_clear();
-         LCD_write_num(x);
-         _delay_ms(500);
+        if(isPressed(_PA, PA0)){
+            x++;
+            LCD_clear();
+            LCD_write_num(x);
+            _delay_ms(200);
+        }
+        if(isPressed(_PA, PA1)){
+            x--;
+            LCD_clear();
+            LCD_write_num(x);
+            _delay_ms(200);
+        }
+            
           
     }
 
