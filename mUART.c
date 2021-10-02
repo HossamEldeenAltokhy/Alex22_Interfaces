@@ -23,11 +23,11 @@ void uart_send_Num(int num){
     
 }
 int uart_receive_Num(){
-    
+    return 0;
 }
 char uart_receive(){
-    
+    return 0;
 }
 char* uart_receive_str(){
-    
+    return 0;
 }

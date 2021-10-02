@@ -40,6 +40,7 @@
 #include <util/delay.h>
 #include "mUART.h"
 #include "mIO.h"
+#include "mLCD.h"
 
 #endif	/* CONFIG_H */
 

@@ -20,8 +20,14 @@
 #define RW              PC1
 #define EN              PC2
 /////////////////////////////////
+// Command List
+#define _8bit_mode    0x38  // _8bit_mode
+#define _D_ON_C_OFF   0x0C  // _Display_ON_Cursor_OFF
+#define _Entry_mode   0x06  // Entry Mode
+#define _Return_Home  0x02  // Return Home
 
 
+/////////////////
 void init_LCD();
 
 void LCD_write(char data);

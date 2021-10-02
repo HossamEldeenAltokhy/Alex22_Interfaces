@@ -15,23 +15,20 @@
 int main(void) {
     /* Replace with your application code */
     // Initialization.....
-   
+    int x = 100;
+    //char str[]= "Hello World!!";// 'H', 'E', 'L', '\0'
+    
+
+    init_LCD();
+    
+    _delay_ms(50);
     
     
-    setPinDir(_PA, PA0, OUT);
-    setPinDir(_PC, PC0, IN);
-    
-    
-    setPinData(_PA, PA0, OFF);
-  
-    
-   
     while (1) {
 
-        if(isPressed(_PC,PC0)){
-           togglePinData(_PA, PA0); 
-           _delay_ms(500);
-        }
+         LCD_clear();
+         LCD_write_num(x);
+         _delay_ms(500);
           
     }
 
