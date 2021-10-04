@@ -36,6 +36,13 @@
 #define _PC    2
 #define _PD    3
 
+// Motor Drive
+#define H_A1  PC3
+#define H_A2  PC4
+#define H_A3  PC5
+#define H_A4  PC6
+#define H_EN1 PD4
+#define H_EN2 PD5
 
 #include <util/delay.h>
 #include "mUART.h"

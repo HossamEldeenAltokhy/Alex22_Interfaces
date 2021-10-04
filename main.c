@@ -7,6 +7,7 @@
 
 #include <avr/io.h>
 #include "config.h"
+#include "mMotor.h"
 
 
 
@@ -15,30 +16,21 @@
 int main(void) {
     /* Replace with your application code */
     // Initialization.....
-    int x = 100;
-    //char str[]= "Hello World!!";// 'H', 'E', 'L', '\0'
+   
+    init_Motor(Motor1);
+    init_Motor(Motor2);
     
-
-    init_LCD();
+    Motor_Reverse(Motor1);
+    Motor_Reverse(Motor2);
     
-    _delay_ms(50);
     
-    LCD_write_num(x);
+    _delay_ms(5000);
     
+    Motor_Stop(Motor1);
     while (1) {
 
-        if(isPressed(_PA, PA0)){
-            x++;
-            LCD_clear();
-            LCD_write_num(x);
-            _delay_ms(200);
-        }
-        if(isPressed(_PA, PA1)){
-            x--;
-            LCD_clear();
-            LCD_write_num(x);
-            _delay_ms(200);
-        }
+       
+        
             
           
     }

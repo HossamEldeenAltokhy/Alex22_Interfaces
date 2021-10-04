@@ -8,6 +8,7 @@
       <itemPath>mUART.h</itemPath>
       <itemPath>config.h</itemPath>
       <itemPath>mLCD.h</itemPath>
+      <itemPath>mMotor.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -20,6 +21,7 @@
       <itemPath>mIO.c</itemPath>
       <itemPath>mUART.c</itemPath>
       <itemPath>mLCD.c</itemPath>
+      <itemPath>mMotor.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
