@@ -14,7 +14,9 @@ build/default/production/main.o.d build/default/production/main.o: main.c \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\util\delay.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\util\delay_basic.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\math.h mUART.h \
- mIO.h mLCD.h mMotor.h mLCD_4bit.h
+ mIO.h \
+ c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\interrupt.h \
+ mMotor.h mLCD_4bit.h
 
 c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\io.h:
 
@@ -50,7 +52,7 @@ mUART.h:
 
 mIO.h:
 
-mLCD.h:
+c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\interrupt.h:
 
 mMotor.h:
 

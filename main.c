@@ -11,24 +11,35 @@
 #include "mLCD_4bit.h"
 
 
+ISR(INT0_vect){
+    togglePinData(_PC, Led0);
+}
+
 
 
 
 int main(void) {
     /* Replace with your application code */
     // Initialization.....
-   
-    char str[] = " Hello";
-    int x =909;
-    init_LCD_4bit();
 
-    _delay_ms(50);
-//    LCD_write_str_4bit(str);
-    LCD_write_num_4bit(x);
+    
+
+    init_Leds();
+    setPortDir(_PA, OUT);
+    
+    /// Interrupt Configuration ///
+    
+    //  Select Mode on Falling Edge Detection
+    MCUCR |= (1<<ISC01);//|(1<<ISC00);
+    //  Enable Interrupt
+    GICR |= (1<<INT0);
+    //  Enable Global Interrupt
+    sei();
+            
     while (1) {
 
-        
-       
+        togglePortData(_PA);
+        _delay_ms(500);
         
             
           
