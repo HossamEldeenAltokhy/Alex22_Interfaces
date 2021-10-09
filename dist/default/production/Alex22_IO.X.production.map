@@ -498,26 +498,26 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000      0xff5
+.debug_info     0x0000000000000000      0xffe
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000      0x4e6 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
  .debug_info    0x00000000000004e6      0x2c5 build/default/production/main.o
  .debug_info    0x00000000000007ab      0x5fa build/default/production/mIO.o
- .debug_info    0x0000000000000da5      0x250 build/default/production/mExternalInterrupt.o
+ .debug_info    0x0000000000000da5      0x259 build/default/production/mExternalInterrupt.o
 
-.debug_abbrev   0x0000000000000000      0x6ee
+.debug_abbrev   0x0000000000000000      0x6fb
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x4a3 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
  .debug_abbrev  0x00000000000004a3       0x9d build/default/production/main.o
  .debug_abbrev  0x0000000000000540      0x166 build/default/production/mIO.o
- .debug_abbrev  0x00000000000006a6       0x48 build/default/production/mExternalInterrupt.o
+ .debug_abbrev  0x00000000000006a6       0x55 build/default/production/mExternalInterrupt.o
 
-.debug_line     0x0000000000000000      0x5b7
+.debug_line     0x0000000000000000      0x634
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x119 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
  .debug_line    0x0000000000000119       0x83 build/default/production/main.o
  .debug_line    0x000000000000019c      0x3db build/default/production/mIO.o
- .debug_line    0x0000000000000577       0x40 build/default/production/mExternalInterrupt.o
+ .debug_line    0x0000000000000577       0xbd build/default/production/mExternalInterrupt.o
 
 .debug_frame    0x0000000000000000      0x194
  *(.debug_frame)
@@ -532,9 +532,10 @@ END GROUP
  .debug_str     0x00000000000001b9       0x15 build/default/production/mIO.o
  .debug_str     0x00000000000001ce        0x0 build/default/production/mExternalInterrupt.o
 
-.debug_loc      0x0000000000000000      0x50c
+.debug_loc      0x0000000000000000      0x5d0
  *(.debug_loc)
  .debug_loc     0x0000000000000000      0x50c build/default/production/mIO.o
+ .debug_loc     0x000000000000050c       0xc4 build/default/production/mExternalInterrupt.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -577,46 +578,46 @@ LOAD data_init
                 0x000000000000006c       0x60 build/default/production/mIO.o
                 0x000000000000006c                setPortDir
 
+.text.init_INT  0x00000000000000cc       0x5a
+ .text.init_INT
+                0x00000000000000cc       0x5a build/default/production/mExternalInterrupt.o
+                0x00000000000000cc                init_INT
+
 .text.__vector_1
-                0x00000000000000cc       0x4c
+                0x0000000000000126       0x4c
  .text.__vector_1
-                0x00000000000000cc       0x4c build/default/production/main.o
-                0x00000000000000cc                __vector_1
+                0x0000000000000126       0x4c build/default/production/main.o
+                0x0000000000000126                __vector_1
 
 .text.togglePortData
-                0x0000000000000118       0x3a
+                0x0000000000000172       0x3a
  .text.togglePortData
-                0x0000000000000118       0x3a build/default/production/mIO.o
-                0x0000000000000118                togglePortData
+                0x0000000000000172       0x3a build/default/production/mIO.o
+                0x0000000000000172                togglePortData
 
-.text.main      0x0000000000000152       0x1c
- .text.main     0x0000000000000152       0x1c build/default/production/main.o
-                0x0000000000000152                main
+.text.main      0x00000000000001ac       0x1c
+ .text.main     0x00000000000001ac       0x1c build/default/production/main.o
+                0x00000000000001ac                main
 
-.text           0x000000000000016e        0x4
- .text          0x000000000000016e        0x4 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
-                0x000000000000016e                __vector_12
-                0x000000000000016e                __bad_interrupt
-                0x000000000000016e                __vector_6
-                0x000000000000016e                __vector_3
-                0x000000000000016e                __vector_11
-                0x000000000000016e                __vector_13
-                0x000000000000016e                __vector_17
-                0x000000000000016e                __vector_19
-                0x000000000000016e                __vector_7
-                0x000000000000016e                __vector_5
-                0x000000000000016e                __vector_4
-                0x000000000000016e                __vector_9
-                0x000000000000016e                __vector_2
-                0x000000000000016e                __vector_15
-                0x000000000000016e                __vector_8
-                0x000000000000016e                __vector_14
-                0x000000000000016e                __vector_10
-                0x000000000000016e                __vector_16
-                0x000000000000016e                __vector_18
-                0x000000000000016e                __vector_20
-
-.text.init_INT  0x0000000000000172        0x2
- .text.init_INT
-                0x0000000000000172        0x2 build/default/production/mExternalInterrupt.o
-                0x0000000000000172                init_INT
+.text           0x00000000000001c8        0x4
+ .text          0x00000000000001c8        0x4 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
+                0x00000000000001c8                __vector_12
+                0x00000000000001c8                __bad_interrupt
+                0x00000000000001c8                __vector_6
+                0x00000000000001c8                __vector_3
+                0x00000000000001c8                __vector_11
+                0x00000000000001c8                __vector_13
+                0x00000000000001c8                __vector_17
+                0x00000000000001c8                __vector_19
+                0x00000000000001c8                __vector_7
+                0x00000000000001c8                __vector_5
+                0x00000000000001c8                __vector_4
+                0x00000000000001c8                __vector_9
+                0x00000000000001c8                __vector_2
+                0x00000000000001c8                __vector_15
+                0x00000000000001c8                __vector_8
+                0x00000000000001c8                __vector_14
+                0x00000000000001c8                __vector_10
+                0x00000000000001c8                __vector_16
+                0x00000000000001c8                __vector_18
+                0x00000000000001c8                __vector_20

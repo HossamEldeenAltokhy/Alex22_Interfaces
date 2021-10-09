@@ -24,13 +24,7 @@ int main(void) {
     // Initialization.....
 
     setPortDir(_PA, OUT);
-    // INT0 >>> MCUCR
-    // select Mode Sense
-//    MCUCR &= ~((1<<ISC01)|(1<<ISC00));
-//    MCUCR |= (1<<ISC01);   // Falling Edge
-//    // Enable Interrupt
-//    GICR |=(1<<INT0);
-    // Enable Global Interrupt bit
+
     
     init_INT(_INT0, _Mode_Rising);
     sei();

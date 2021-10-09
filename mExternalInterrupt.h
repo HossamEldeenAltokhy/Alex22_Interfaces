@@ -17,8 +17,11 @@
 #define _Mode_Low           0
 #define _Mode_AnyChange     1
 #define _Mode_Falling       2
-#define _Mode_Rising       3
+#define _Mode_Rising        3
 
+
+#define _Mode_INT2_Falling       0
+#define _Mode_INT2_Rising        1
 
 void init_INT(int _INT, int Mode);
 
