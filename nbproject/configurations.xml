@@ -10,6 +10,7 @@
       <itemPath>mLCD.h</itemPath>
       <itemPath>mMotor.h</itemPath>
       <itemPath>mLCD_4bit.h</itemPath>
+      <itemPath>mExternalInterrupt.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -24,6 +25,7 @@
       <itemPath>mLCD.c</itemPath>
       <itemPath>mMotor.c</itemPath>
       <itemPath>mLCD_4bit.c</itemPath>
+      <itemPath>mExternalInterrupt.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

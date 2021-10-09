@@ -9,39 +9,36 @@
 #include "config.h"
 #include "mMotor.h"
 #include "mLCD_4bit.h"
+#include "mExternalInterrupt.h"
 
-
+// Interrupt Service Routine
 ISR(INT0_vect){
-    togglePinData(_PC, Led0);
+    
+    togglePortData(_PA);
+    
 }
-
-
 
 
 int main(void) {
     /* Replace with your application code */
     // Initialization.....
 
-    
-
-    init_Leds();
     setPortDir(_PA, OUT);
+    // INT0 >>> MCUCR
+    // select Mode Sense
+//    MCUCR &= ~((1<<ISC01)|(1<<ISC00));
+//    MCUCR |= (1<<ISC01);   // Falling Edge
+//    // Enable Interrupt
+//    GICR |=(1<<INT0);
+    // Enable Global Interrupt bit
     
-    /// Interrupt Configuration ///
-    
-    //  Select Mode on Falling Edge Detection
-    MCUCR |= (1<<ISC01);//|(1<<ISC00);
-    //  Enable Interrupt
-    GICR |= (1<<INT0);
-    //  Enable Global Interrupt
+    init_INT(_INT0, _Mode_Rising);
     sei();
             
+    int x;
     while (1) {
 
-        togglePortData(_PA);
-        _delay_ms(500);
-        
-            
+        x++;
           
     }
 

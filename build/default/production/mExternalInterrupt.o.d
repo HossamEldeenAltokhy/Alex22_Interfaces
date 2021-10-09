@@ -1,4 +1,5 @@
-build/default/production/main.o.d build/default/production/main.o: main.c \
+build/default/production/mExternalInterrupt.o.d \
+ build/default/production/mExternalInterrupt.o: mExternalInterrupt.c \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\io.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\sfr_defs.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\inttypes.h \
@@ -16,7 +17,7 @@ build/default/production/main.o.d build/default/production/main.o: main.c \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\math.h mUART.h \
  mIO.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\interrupt.h \
- mMotor.h mLCD_4bit.h mExternalInterrupt.h
+ mExternalInterrupt.h
 
 c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\io.h:
 
@@ -53,9 +54,5 @@ mUART.h:
 mIO.h:
 
 c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\interrupt.h:
-
-mMotor.h:
-
-mLCD_4bit.h:
 
 mExternalInterrupt.h:
