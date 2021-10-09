@@ -9,30 +9,27 @@
 #include "config.h"
 #include "mMotor.h"
 #include "mLCD_4bit.h"
-#include "mExternalInterrupt.h"
+#include "mADC.h"
 
-// Interrupt Service Routine
-ISR(INT0_vect){
-    
-    togglePortData(_PA);
-    
-}
+
 
 
 int main(void) {
     /* Replace with your application code */
     // Initialization.....
 
-    setPortDir(_PA, OUT);
-
+    init_ADC(_CH1, _AVCC, PRE128);
     
-    init_INT(_INT0, _Mode_Rising);
-    sei();
-            
-    int x;
+    init_LCD_4bit();
+
     while (1) {
 
-        x++;
+        ADC_SC();
+        int x = ADC_read();
+        LCD_clear_4bit();
+        LCD_write_num_4bit(x);
+        _delay_ms(500);
+     
           
     }
 
