@@ -30,7 +30,9 @@
 #define _Entry_mode   0x06  // Entry Mode _ Increment Cursor
 #define _Return_Home  0x02  // Return Home
 
-
+// 
+#define _ROW0    0
+#define _ROW1    1
 /////////////////
 void init_LCD_4bit();
 

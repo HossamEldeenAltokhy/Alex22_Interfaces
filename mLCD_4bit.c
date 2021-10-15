@@ -67,3 +67,15 @@ void LCD_clear_4bit(){
     LCD_cmd_4bit(0x01);
     _delay_ms(5);
 }
+
+
+void LCD_goto_4bit(int row, int column){
+    switch(row){
+        case _ROW0:
+            LCD_cmd_4bit(0x80 | column);
+            break;
+        case _ROW1:
+            LCD_cmd_4bit(0xC0 | column);
+            break;       
+    }
+}

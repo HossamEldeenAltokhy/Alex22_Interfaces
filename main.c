@@ -12,38 +12,22 @@
 #include "mADC.h"
 
 
-
-
-
-
-
-ISR(ADC_vect) {
-    char str[] = " mV";
-    int x = ADC_read() *4.887585532746823069403714565;
-//    LCD_clear_4bit();
-    LCD_write_num_4bit(x);
-    LCD_write_str_4bit(str);
-    _delay_ms(500);
-}
-
-
+char str[]= "Hello";
 
 int main(void) {
     /* Replace with your application code */
     // Initialization.....
 
-    init_ADC(_CH1_0, _AVCC, _PRE128);
-    init_Interrupt_ADC();
+ 
     init_LCD_4bit();
 
     _delay_ms(100);
 
-    sei(); // Enable Global Interrupt
+    LCD_goto_4bit(_ROW1, 5 );
+    LCD_write_str_4bit(str);
     while (1) {
 
-        ADC_SC();
-
-        //_delay_ms(500);
+    
 
 
     }
