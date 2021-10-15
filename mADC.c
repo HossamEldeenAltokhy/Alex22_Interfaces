@@ -5,7 +5,6 @@
 
 void init_ADC(int _ch, int Ref, int Prescaler){
     /*
-     
        ADMUX:
 
         - Select Channel.
@@ -19,6 +18,14 @@ void init_ADC(int _ch, int Ref, int Prescaler){
         - Select Prescaler.
      
      */
+    ADMUX = 0x00;  // 00100000
+    ADMUX |= _ch;  //00000001
+    ADMUX |= (Ref<<REFS0);
+    
+    ADCSRA &= 0xF8;  // 11111000
+    ADCSRA |= Prescaler;   // _PS128
+    ADCSRA |= (1<<ADEN);
+    
 }
 
 void ADC_SC(){
@@ -27,11 +34,16 @@ void ADC_SC(){
 }
 
 int ADC_read(){
-    while(!(ADCSRA & (1<<ADIF)));
-    // read Data Register
-    // ADCH - ADCL
+    
+    // Wait HERE till Flag rises
+    // while(!(ADCSRA & (1<<ADIF)));
     int data = ADCL;
     data |= (ADCH<<8);
     return data;
     
+}
+
+
+void init_Interrupt_ADC(){
+    ADCSRA |= (1<<ADIE);
 }

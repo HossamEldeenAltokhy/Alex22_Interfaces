@@ -14,23 +14,38 @@
 
 
 
+
+
+
+ISR(ADC_vect) {
+    char str[] = " mV";
+    int x = ADC_read() *4.887585532746823069403714565;
+//    LCD_clear_4bit();
+    LCD_write_num_4bit(x);
+    LCD_write_str_4bit(str);
+    _delay_ms(500);
+}
+
+
+
 int main(void) {
     /* Replace with your application code */
     // Initialization.....
 
-    init_ADC(_CH1, _AVCC, PRE128);
-    
+    init_ADC(_CH1_0, _AVCC, _PRE128);
+    init_Interrupt_ADC();
     init_LCD_4bit();
 
+    _delay_ms(100);
+
+    sei(); // Enable Global Interrupt
     while (1) {
 
         ADC_SC();
-        int x = ADC_read();
-        LCD_clear_4bit();
-        LCD_write_num_4bit(x);
-        _delay_ms(500);
-     
-          
+
+        //_delay_ms(500);
+
+
     }
 
     return 0;
