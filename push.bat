@@ -1,4 +1,4 @@
 #echo
 git add .
-git commit -m "update LCD with Goto() function"
+git commit -m "update Timer"
 git push -u origin main

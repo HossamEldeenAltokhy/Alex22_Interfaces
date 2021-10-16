@@ -10,24 +10,45 @@
 #include "mMotor.h"
 #include "mLCD_4bit.h"
 #include "mADC.h"
+#include "mTimer.h"
+
+#define sec 1
+#define min 0
+
+ISR(TIMER0_COMP_vect) {
+
+    static int x = 0;
+
+    x++;
+    if (x == 62 * (60 * min + sec)) {
+        togglePortData(_PC);
+        x = 0;
+    }
 
 
-char str[]= "Hello";
+}
 
 int main(void) {
     /* Replace with your application code */
     // Initialization.....
 
- 
-    init_LCD_4bit();
 
-    _delay_ms(100);
+    setPortDir(_PC, OUT);
 
-    LCD_goto_4bit(_ROW1, 5 );
-    LCD_write_str_4bit(str);
+
+    setOutCompare(127);
+    Timer_enable_INT(INT_TOC);
+
+
+
+    sei();
+    init_Timer(CTC, _CLk_1024);
+
+
     while (1) {
 
-    
+
+
 
 
     }
