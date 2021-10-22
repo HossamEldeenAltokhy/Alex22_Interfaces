@@ -28,10 +28,14 @@
 #define INT_TOV       TOIE0     
 #define INT_TOC       OCIE0
 
+#define ClearOnComp   2
+#define SetOnComp     3
+
+
 void init_Timer(int mode, int clockSelect);
 
-void Timer_enable_INT();
+void Timer_enable_INT(int selectINT);
 void setOutCompare(unsigned char compareValue);
-
+void setOC0Mode(int OC0_Mode);
 #endif	/* MTIMER_H */
 

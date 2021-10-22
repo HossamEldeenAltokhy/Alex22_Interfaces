@@ -28,7 +28,7 @@ void init_Timer(int mode, int clockSelect) {
 //            TCCR0 |= (1 << WGM00) | (1 << WGM01);
 //            break;
 //    }
-//    
+    
     
 //    switch (clockSelect) {
 //        case _TimerOff:
@@ -61,10 +61,16 @@ void init_Timer(int mode, int clockSelect) {
 
 
 void Timer_enable_INT(int selectINT){
-    
     TIMSK |= (1<<selectINT);
 }
 
 void setOutCompare(unsigned char compareValue){
     OCR0 = compareValue;
+}
+
+void setOC0Mode(int OC0_Mode){
+    // Config Data Direction for OC0 pin ***********
+    setPinDir(_PB, PB3, OUT);
+    TCCR0 &= ~((1<<COM01)|(1<<COM00));
+    TCCR0 |= (OC0_Mode << COM00);
 }

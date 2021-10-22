@@ -34,12 +34,12 @@ Discarded input sections
                 0x0000000000000000        0x8 build/default/production/mIO.o
  .text.isPressed_B
                 0x0000000000000000       0x18 build/default/production/mIO.o
- .text.isPressed
-                0x0000000000000000       0x70 build/default/production/mIO.o
+ .text.setPortDir
+                0x0000000000000000       0x60 build/default/production/mIO.o
  .text.setPortData
                 0x0000000000000000       0x2a build/default/production/mIO.o
- .text.setPinDir
-                0x0000000000000000       0xf0 build/default/production/mIO.o
+ .text.togglePortData
+                0x0000000000000000       0x3a build/default/production/mIO.o
  .text.setPinData
                 0x0000000000000000       0xf0 build/default/production/mIO.o
  .text.togglePinData
@@ -168,7 +168,7 @@ Discarded input sections
                 0x0000000000000000       0x30 build/default/production/mADC.o
  .text.ADC_SC   0x0000000000000000        0x4 build/default/production/mADC.o
  .text.ADC_read
-                0x0000000000000000        0xa build/default/production/mADC.o
+                0x0000000000000000        0xe build/default/production/mADC.o
  .text.init_Interrupt_ADC
                 0x0000000000000000        0x4 build/default/production/mADC.o
  .debug_info    0x0000000000000000      0x2cb build/default/production/mADC.o
@@ -177,13 +177,15 @@ Discarded input sections
  .debug_aranges
                 0x0000000000000000       0x38 build/default/production/mADC.o
  .debug_ranges  0x0000000000000000       0x28 build/default/production/mADC.o
- .debug_line    0x0000000000000000       0xeb build/default/production/mADC.o
+ .debug_line    0x0000000000000000       0xf5 build/default/production/mADC.o
  .debug_str     0x0000000000000000        0x0 build/default/production/mADC.o
  .comment       0x0000000000000000       0x30 build/default/production/mADC.o
  .debug_frame   0x0000000000000000       0x54 build/default/production/mADC.o
  .text          0x0000000000000000        0x0 build/default/production/mTimer.o
  .data          0x0000000000000000        0x0 build/default/production/mTimer.o
  .bss           0x0000000000000000        0x0 build/default/production/mTimer.o
+ .text.Timer_enable_INT
+                0x0000000000000000       0x16 build/default/production/mTimer.o
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
@@ -550,53 +552,54 @@ END GROUP
 .debug_aranges  0x0000000000000000       0xe0
  *(.debug_aranges)
  .debug_aranges
-                0x0000000000000000       0x28 build/default/production/main.o
+                0x0000000000000000       0x20 build/default/production/main.o
  .debug_aranges
-                0x0000000000000028       0x88 build/default/production/mIO.o
+                0x0000000000000020       0x88 build/default/production/mIO.o
  .debug_aranges
-                0x00000000000000b0       0x30 build/default/production/mTimer.o
+                0x00000000000000a8       0x38 build/default/production/mTimer.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0x10bf
+.debug_info     0x0000000000000000     0x120d
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000      0x4e6 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_info    0x00000000000004e6      0x312 build/default/production/main.o
- .debug_info    0x00000000000007f8      0x5fa build/default/production/mIO.o
- .debug_info    0x0000000000000df2      0x2cd build/default/production/mTimer.o
+ .debug_info    0x00000000000004e6      0x3f3 build/default/production/main.o
+ .debug_info    0x00000000000008d9      0x5fa build/default/production/mIO.o
+ .debug_info    0x0000000000000ed3      0x33a build/default/production/mTimer.o
 
-.debug_abbrev   0x0000000000000000      0x726
+.debug_abbrev   0x0000000000000000      0x7af
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x4a3 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_abbrev  0x00000000000004a3       0x9f build/default/production/main.o
- .debug_abbrev  0x0000000000000542      0x166 build/default/production/mIO.o
- .debug_abbrev  0x00000000000006a8       0x7e build/default/production/mTimer.o
+ .debug_abbrev  0x00000000000004a3      0x117 build/default/production/main.o
+ .debug_abbrev  0x00000000000005ba      0x166 build/default/production/mIO.o
+ .debug_abbrev  0x0000000000000720       0x8f build/default/production/mTimer.o
 
-.debug_line     0x0000000000000000      0x643
+.debug_line     0x0000000000000000      0x6fa
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x119 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_line    0x0000000000000119       0x95 build/default/production/main.o
- .debug_line    0x00000000000001ae      0x3db build/default/production/mIO.o
- .debug_line    0x0000000000000589       0xba build/default/production/mTimer.o
+ .debug_line    0x0000000000000119      0x11a build/default/production/main.o
+ .debug_line    0x0000000000000233      0x3db build/default/production/mIO.o
+ .debug_line    0x000000000000060e       0xec build/default/production/mTimer.o
 
-.debug_frame    0x0000000000000000      0x1b4
+.debug_frame    0x0000000000000000      0x178
  *(.debug_frame)
- .debug_frame   0x0000000000000000       0x7c build/default/production/main.o
- .debug_frame   0x000000000000007c       0xf4 build/default/production/mIO.o
- .debug_frame   0x0000000000000170       0x44 build/default/production/mTimer.o
+ .debug_frame   0x0000000000000000       0x24 build/default/production/main.o
+ .debug_frame   0x0000000000000024       0xf4 build/default/production/mIO.o
+ .debug_frame   0x0000000000000118       0x60 build/default/production/mTimer.o
 
-.debug_str      0x0000000000000000      0x1ef
+.debug_str      0x0000000000000000      0x1e3
  *(.debug_str)
  .debug_str     0x0000000000000000      0x196 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_str     0x0000000000000196       0x44 build/default/production/main.o
- .debug_str     0x00000000000001da       0x15 build/default/production/mIO.o
- .debug_str     0x00000000000001ef        0x0 build/default/production/mTimer.o
+ .debug_str     0x0000000000000196       0x2e build/default/production/main.o
+ .debug_str     0x00000000000001c4       0x15 build/default/production/mIO.o
+ .debug_str     0x00000000000001d9        0xa build/default/production/mTimer.o
 
-.debug_loc      0x0000000000000000      0x558
+.debug_loc      0x0000000000000000      0x5d6
  *(.debug_loc)
- .debug_loc     0x0000000000000000      0x50c build/default/production/mIO.o
- .debug_loc     0x000000000000050c       0x4c build/default/production/mTimer.o
+ .debug_loc     0x0000000000000000       0x48 build/default/production/main.o
+ .debug_loc     0x0000000000000048      0x50c build/default/production/mIO.o
+ .debug_loc     0x0000000000000554       0x82 build/default/production/mTimer.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -618,9 +621,9 @@ END GROUP
 
 .debug_ranges   0x0000000000000000       0xb0
  *(.debug_ranges)
- .debug_ranges  0x0000000000000000       0x18 build/default/production/main.o
- .debug_ranges  0x0000000000000018       0x78 build/default/production/mIO.o
- .debug_ranges  0x0000000000000090       0x20 build/default/production/mTimer.o
+ .debug_ranges  0x0000000000000000       0x10 build/default/production/main.o
+ .debug_ranges  0x0000000000000010       0x78 build/default/production/mIO.o
+ .debug_ranges  0x0000000000000088       0x28 build/default/production/mTimer.o
 
 .debug_macro
  *(.debug_macro)
@@ -633,68 +636,64 @@ LOAD data_init
  .note.gnu.avr.deviceinfo
                 0x0000000000000000       0x3c C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
 
-.bss.x.1814     0x0000000000800060        0x2
- .bss.x.1814    0x0000000000800060        0x2 build/default/production/main.o
+.bss.inc        0x0000000000800060        0x2
+ .bss.inc       0x0000000000800060        0x2 build/default/production/main.o
+                0x0000000000800060                inc
 
-.text.__vector_10
-                0x00000000000000ae       0x6a
- .text.__vector_10
-                0x00000000000000ae       0x6a build/default/production/main.o
-                0x00000000000000ae                __vector_10
+.text.setPinDir
+                0x00000000000000ae       0xf0
+ .text.setPinDir
+                0x00000000000000ae       0xf0 build/default/production/mIO.o
+                0x00000000000000ae                setPinDir
 
-.text.setPortDir
-                0x0000000000000118       0x60
- .text.setPortDir
-                0x0000000000000118       0x60 build/default/production/mIO.o
-                0x0000000000000118                setPortDir
+.text.main      0x000000000000019e       0x88
+ .text.main     0x000000000000019e       0x88 build/default/production/main.o
+                0x000000000000019e                main
 
-.text.togglePortData
-                0x0000000000000178       0x3a
- .text.togglePortData
-                0x0000000000000178       0x3a build/default/production/mIO.o
-                0x0000000000000178                togglePortData
+.text.isPressed
+                0x0000000000000226       0x70
+ .text.isPressed
+                0x0000000000000226       0x70 build/default/production/mIO.o
+                0x0000000000000226                isPressed
 
-.text.main      0x00000000000001b2       0x2a
- .text.main     0x00000000000001b2       0x2a build/default/production/main.o
-                0x00000000000001b2                main
+.text.setOC0Mode
+                0x0000000000000296       0x34
+ .text.setOC0Mode
+                0x0000000000000296       0x34 build/default/production/mTimer.o
+                0x0000000000000296                setOC0Mode
 
 .text.init_Timer
-                0x00000000000001dc       0x1a
+                0x00000000000002ca       0x1a
  .text.init_Timer
-                0x00000000000001dc       0x1a build/default/production/mTimer.o
-                0x00000000000001dc                init_Timer
+                0x00000000000002ca       0x1a build/default/production/mTimer.o
+                0x00000000000002ca                init_Timer
 
-.text.Timer_enable_INT
-                0x00000000000001f6       0x16
- .text.Timer_enable_INT
-                0x00000000000001f6       0x16 build/default/production/mTimer.o
-                0x00000000000001f6                Timer_enable_INT
-
-.text           0x000000000000020c        0x4
- .text          0x000000000000020c        0x4 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
-                0x000000000000020c                __vector_1
-                0x000000000000020c                __vector_12
-                0x000000000000020c                __bad_interrupt
-                0x000000000000020c                __vector_6
-                0x000000000000020c                __vector_3
-                0x000000000000020c                __vector_11
-                0x000000000000020c                __vector_13
-                0x000000000000020c                __vector_17
-                0x000000000000020c                __vector_19
-                0x000000000000020c                __vector_7
-                0x000000000000020c                __vector_5
-                0x000000000000020c                __vector_4
-                0x000000000000020c                __vector_9
-                0x000000000000020c                __vector_2
-                0x000000000000020c                __vector_15
-                0x000000000000020c                __vector_8
-                0x000000000000020c                __vector_14
-                0x000000000000020c                __vector_16
-                0x000000000000020c                __vector_18
-                0x000000000000020c                __vector_20
+.text           0x00000000000002e4        0x4
+ .text          0x00000000000002e4        0x4 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
+                0x00000000000002e4                __vector_1
+                0x00000000000002e4                __vector_12
+                0x00000000000002e4                __bad_interrupt
+                0x00000000000002e4                __vector_6
+                0x00000000000002e4                __vector_3
+                0x00000000000002e4                __vector_11
+                0x00000000000002e4                __vector_13
+                0x00000000000002e4                __vector_17
+                0x00000000000002e4                __vector_19
+                0x00000000000002e4                __vector_7
+                0x00000000000002e4                __vector_5
+                0x00000000000002e4                __vector_4
+                0x00000000000002e4                __vector_9
+                0x00000000000002e4                __vector_2
+                0x00000000000002e4                __vector_15
+                0x00000000000002e4                __vector_8
+                0x00000000000002e4                __vector_14
+                0x00000000000002e4                __vector_10
+                0x00000000000002e4                __vector_16
+                0x00000000000002e4                __vector_18
+                0x00000000000002e4                __vector_20
 
 .text.setOutCompare
-                0x0000000000000210        0x4
+                0x00000000000002e8        0x4
  .text.setOutCompare
-                0x0000000000000210        0x4 build/default/production/mTimer.o
-                0x0000000000000210                setOutCompare
+                0x00000000000002e8        0x4 build/default/production/mTimer.o
+                0x00000000000002e8                setOutCompare

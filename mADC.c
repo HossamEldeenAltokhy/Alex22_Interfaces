@@ -36,7 +36,7 @@ void ADC_SC(){
 int ADC_read(){
     
     // Wait HERE till Flag rises
-    // while(!(ADCSRA & (1<<ADIF)));
+    while(!(ADCSRA & (1<<ADIF)));
     int data = ADCL;
     data |= (ADCH<<8);
     return data;
