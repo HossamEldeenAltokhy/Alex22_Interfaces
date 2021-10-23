@@ -1,33 +1,29 @@
 #include <avr/io.h>
 #include "config.h"
-void init_uart(int BaudRate,
-        int RX_EN,
-        int TX_EN,
-        int INT_EN){
+void init_uart(int BaudRate,int RX_EN,int TX_EN){
     
     // Implementaion LEVEL
-    // 
-//    lkvknlknevlknlkvnklnvkevkne
+    UCSRB |= (RX_EN << RXEN);
+    UCSRB |= (TX_EN << TXEN);
+    // BaudRate
+    UBRRL = (F_CPU/16.0/BaudRate)-1 ; // 103;
 }
 
 void uart_send(char data){
-    int x;
-    if(x == Relay){
-        
-    }
+    // Check if UDR is EMPTY 
+    while(!(UCSRA & (1<<UDRE))); 
+    UDR = data;
 }
 void uart_send_str(char* str){
     
 }
 void uart_send_Num(int num){
-    
+        
 }
-int uart_receive_Num(){
-    return 0;
-}
+
 char uart_receive(){
-    return 0;
+    
+    while(!(UCSRA & (1<<RXC)));
+    return UDR;
 }
-char* uart_receive_str(){
-    return 0;
-}
+
