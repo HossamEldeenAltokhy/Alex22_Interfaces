@@ -16,7 +16,9 @@ build/default/production/main.o.d build/default/production/main.o: main.c \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\math.h mUART.h \
  mIO.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\interrupt.h \
- mMotor.h mLCD_4bit.h mADC.h mTimer.h
+ mMotor.h mLCD_4bit.h mADC.h mTimer.h \
+ c:\program\ files\microchip\xc8\v2.32\avr\avr\include\string.h \
+ c:\program\ files\microchip\xc8\v2.32\avr\lib\gcc\avr\5.4.0\include\stddef.h
 
 c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\io.h:
 
@@ -61,3 +63,7 @@ mLCD_4bit.h:
 mADC.h:
 
 mTimer.h:
+
+c:\program\ files\microchip\xc8\v2.32\avr\avr\include\string.h:
+
+c:\program\ files\microchip\xc8\v2.32\avr\lib\gcc\avr\5.4.0\include\stddef.h:

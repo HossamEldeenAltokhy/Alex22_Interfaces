@@ -1,6 +1,7 @@
 #include <avr/io.h>
 #include "config.h"
 #include "mUART.h"
+#include <stdlib.h>
 
 void init_uart(int BaudRate,int RX_EN,int TX_EN){
     
@@ -9,7 +10,13 @@ void init_uart(int BaudRate,int RX_EN,int TX_EN){
     UCSRB |= (TX_EN << TXEN);
     UCSRB |= (1<<RXCIE);
     // BaudRate
-    UBRRL = (F_CPU/16.0/BaudRate)-1 ; // 103;
+    int _UBRR = (F_CPU/16.0/BaudRate)-1 ; // 103;
+    UBRRL = _UBRR;
+    if(_UBRR >255){
+       UBRRH = (_UBRR>>8); 
+    }
+    
+    
 }
 
 void uart_send(char data){

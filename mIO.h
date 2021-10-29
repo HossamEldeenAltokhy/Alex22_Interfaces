@@ -20,7 +20,7 @@ void init_Buttons();
 
 void set_Relay(int state);
 void set_Led(int LedNumber, int state);
-
+void set_Buzzer(int state);
 int isPressed_B(int pinNum);
 
 int isPressed(int portNum, int pinNum);

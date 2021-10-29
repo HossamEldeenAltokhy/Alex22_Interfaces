@@ -23,6 +23,13 @@ void set_Relay(int state) {
         PORTA &= ~(1 << Relay); // Relay OFF
     }
 }
+void set_Buzzer(int state) {
+    if (state) {
+        PORTA |= (1 << Buzzer); // Relay ON
+    } else {
+        PORTA &= ~(1 << Buzzer); // Relay OFF
+    }
+}
 
 void set_Led(int LedNumber, int state) {
 
