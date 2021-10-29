@@ -12,6 +12,12 @@
 #include "mADC.h"
 #include "mTimer.h"
 
+ISR(USART_RXC_vect){
+    // Receiving .....
+    char data  = UDR;
+    
+    PORTA = data;
+}
 
 
 int main(void) {
@@ -19,22 +25,18 @@ int main(void) {
     // Initialization.....
 
 
-    init_uart(9600, 1 , 1);
+    init_uart(9600, Rx_enable , Tx_enable);
     
     setPortDir(_PA, OUT);
-    
+    setPortDir(_PC, OUT);
+    sei();
     while (1) {
 
 
+        PORTC++;
+        _delay_ms(20);
        
-        char data = uart_receive();
-        if(data == 'N'){
-            PORTA = 0xFF;
-        }
-        if(data == 'F'){
-            PORTA = 0x00;
-        }
-        _delay_ms(500);
+        
 
     }
 

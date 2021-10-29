@@ -1,10 +1,13 @@
 #include <avr/io.h>
 #include "config.h"
+#include "mUART.h"
+
 void init_uart(int BaudRate,int RX_EN,int TX_EN){
     
     // Implementaion LEVEL
     UCSRB |= (RX_EN << RXEN);
     UCSRB |= (TX_EN << TXEN);
+    UCSRB |= (1<<RXCIE);
     // BaudRate
     UBRRL = (F_CPU/16.0/BaudRate)-1 ; // 103;
 }
@@ -14,11 +17,18 @@ void uart_send(char data){
     while(!(UCSRA & (1<<UDRE))); 
     UDR = data;
 }
+
+// "Hello" +'\0'
 void uart_send_str(char* str){
-    
+    for(int i = 0 ; str[i]!= '\0' ; i++){
+        uart_send(str[i]);
+    }
 }
 void uart_send_Num(int num){
-        
+    
+    char buff[11];
+    itoa(num, buff, 10);
+    uart_send_str(buff);
 }
 
 char uart_receive(){
