@@ -1,0 +1,12 @@
+ADMUX:
+
+- Select Channel.
+- Select Voltage Reference.
+- Data Adjust.
+
+ADCSRA:
+
+- Enable ADC.
+- Start Conversion.
+- Enable Interrupt.
+- Select Prescaler.
