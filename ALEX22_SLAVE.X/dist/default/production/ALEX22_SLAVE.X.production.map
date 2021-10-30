@@ -716,12 +716,12 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0x1144
+.debug_info     0x0000000000000000     0x114c
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000      0x4e6 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
  .debug_info    0x00000000000004e6      0x29d build/default/production/main.o
  .debug_info    0x0000000000000783      0x633 build/default/production/mIO.o
- .debug_info    0x0000000000000db6      0x38e build/default/production/mSPI.o
+ .debug_info    0x0000000000000db6      0x396 build/default/production/mSPI.o
 
 .debug_abbrev   0x0000000000000000      0x762
  *(.debug_abbrev)

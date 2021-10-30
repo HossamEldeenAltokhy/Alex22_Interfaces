@@ -20,10 +20,11 @@
 int main(void) {
     /* Replace with your application code */
     // Initialization.....
-
-
-    init_spi(master);
+init_spi(master);
     spi_setClk(spi_clk_4, spi_x);
+    
+    
+    _delay_ms(1000);
     char counter = 0;
     while (1) {
 

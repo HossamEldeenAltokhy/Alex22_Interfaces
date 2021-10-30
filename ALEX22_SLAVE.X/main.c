@@ -18,7 +18,7 @@ int main(void) {
     setPortDir(_PA, OUT);
     while (1) {
         
-        PORTA = (unsigned) spi_receive();
+        PORTA = spi_receive();
         
     }
 }

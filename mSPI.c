@@ -5,15 +5,11 @@
 void init_spi(int mode){
     switch(mode){
         case master:
-            setPinDir(_PB, SS  , OUT);
-            setPinDir(_PB, MOSI, OUT);
-            setPinDir(_PB, SCK , OUT);
-            _delay_ms(50);
-            
+            DDRB |= (1<<MOSI)|(1<<SS)|(1<<SCK);
             SPCR |= (1<<SPE)|(1<<MSTR);
             break;
         case slave:
-            setPinDir(_PB, MISO, OUT);
+            DDRB |= (1<<MISO);
             SPCR |= (1<<SPE);
             break;
     }

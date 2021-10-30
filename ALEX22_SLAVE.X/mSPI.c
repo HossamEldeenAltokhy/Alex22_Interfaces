@@ -23,11 +23,11 @@ void spi_setClk(int spi_clk, int spi2X){
         SPSR |= (1<<SPI2X);
     }
 }
-void spi_send(unsigned char data){
+void spi_send(char data){
     SPDR = data;
     while(!(SPSR & (1<< SPIF)));
 }
-unsigned char spi_receive(void){
+char spi_receive(void){
     while(!(SPSR & (1<< SPIF)));
         return SPDR;
 }

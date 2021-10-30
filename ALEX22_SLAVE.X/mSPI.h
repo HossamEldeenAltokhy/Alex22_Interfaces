@@ -27,8 +27,8 @@
 
 void init_spi(int mode);
 void spi_setClk(int spi_clk, int spi2X);
-void spi_send(unsigned char data);
-unsigned char spi_receive(void);
+void spi_send(char data);
+char spi_receive(void);
 
 #endif	/* MSPI_H */
 
