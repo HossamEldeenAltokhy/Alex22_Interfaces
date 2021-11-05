@@ -13,6 +13,7 @@
 #include "mADC.h"
 #include "mTimer.h"
 #include "mSPI.h"
+#include "mTWI.h"
 #include <string.h>
 
 
@@ -20,7 +21,8 @@
 int main(void) {
     /* Replace with your application code */
     // Initialization.....
-init_spi(master);
+
+    init_spi(master);
     spi_setClk(spi_clk_4, spi_x);
     
     

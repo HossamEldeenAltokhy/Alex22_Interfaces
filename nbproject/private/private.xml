@@ -3,17 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/hossa/MPLABXProjects/Alex22_IO.X/mSPI.h</file>
             <file>file:/C:/Users/hossa/MPLABXProjects/Alex22_IO.X/main.c</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex22_IO.X/mExternalInterrupt.c</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex22_IO.X/mADC.h</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex22_IO.X/mADC.c</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex22_IO.X/mLCD_4bit.c</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex22_IO.X/mLCD_4bit.h</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex22_IO.X/mTimer.h</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex22_IO.X/mTimer.c</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex22_IO.X/mUART.c</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex22_IO.X/mIO.h</file>
-            <file>file:/C:/Users/hossa/MPLABXProjects/Alex22_IO.X/mIO.c</file>
+            <file>file:/C:/Users/hossa/MPLABXProjects/Alex22_IO.X/mTWI.c</file>
+            <file>file:/C:/Users/hossa/MPLABXProjects/Alex22_IO.X/mSPI.c</file>
+            <file>file:/C:/Users/hossa/MPLABXProjects/Alex22_IO.X/mTWI.h</file>
         </group>
     </open-files>
 </project-private>
