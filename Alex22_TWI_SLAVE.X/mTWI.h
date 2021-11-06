@@ -12,7 +12,7 @@
 #define mAddress    0x06    // TWAR
 #define SLA_R       0x03    // SLA+R == 0000001+1
 #define SLA_W       0x02    // SLA+W == 0000001+0
-
+#define SLAVE_ADDRESS 0x02  // 0000001
 
 void TWI_init_BitRate();
 

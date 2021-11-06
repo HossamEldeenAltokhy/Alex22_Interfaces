@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <project>                                  
-  <executable name="dist/default/production/Alex22_IO.X.production.elf">                 
+  <executable name="dist/default/production/Alex22_TWI_SLAVE.X.production.elf">                 
     <memory name="program">              
       <units>bytes</units>                 
       <length>32768</length>                 
-      <used>294</used>                     
-      <free>32474</free>                     
+      <used>364</used>                     
+      <free>32404</free>                     
     </memory>                              
     <memory name="data">                 
       <units>bytes</units>                 

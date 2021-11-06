@@ -5,7 +5,7 @@
  * Created on September 24, 2021, 3:26 PM
  */
  
-// MASTER AVR
+// SLAVE AVR
 #include <avr/io.h>
 #include "config.h"
 #include "mMotor.h"
@@ -20,21 +20,22 @@
 
 int main(void) {
   
+    setPortDir(_PA, OUT);
     TWI_init_BitRate();
-    int x  = 0;
-
-    _delay_ms(2000);
+    TWI_init_slave(SLAVE_ADDRESS);
     while (1) {
-
-        if(TWI_start(SLA_W)){
-            // Start condition successfully Done!
-            TWI_write(x++);
-            
-            TWI_stop();
+        
+        int code = TWI_slave_listen();
+        if(code == 1){
+            //SLA+W  >>>  Slave Reads
+            char data = TWI_slave_read();
+            PORTA = data;
         }
-     
+        else if(code == 2){
+            //SLA+R >>> Slave Writes
+            TWI_slave_write('A');
+        }
 
-        _delay_ms(500);
     }
 
     return 0;

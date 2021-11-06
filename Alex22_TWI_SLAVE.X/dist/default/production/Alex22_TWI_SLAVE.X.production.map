@@ -64,8 +64,6 @@ Discarded input sections
                 0x0000000000000000       0x18 build/default/production/mIO.o
  .text.isPressed
                 0x0000000000000000       0x70 build/default/production/mIO.o
- .text.setPortDir
-                0x0000000000000000       0x60 build/default/production/mIO.o
  .text.setPortData
                 0x0000000000000000       0x2a build/default/production/mIO.o
  .text.togglePortData
@@ -76,16 +74,6 @@ Discarded input sections
                 0x0000000000000000       0xf0 build/default/production/mIO.o
  .text.togglePinData
                 0x0000000000000000       0x72 build/default/production/mIO.o
- .debug_info    0x0000000000000000      0x630 build/default/production/mIO.o
- .debug_abbrev  0x0000000000000000      0x186 build/default/production/mIO.o
- .debug_loc     0x0000000000000000      0x50c build/default/production/mIO.o
- .debug_aranges
-                0x0000000000000000       0x90 build/default/production/mIO.o
- .debug_ranges  0x0000000000000000       0x80 build/default/production/mIO.o
- .debug_line    0x0000000000000000      0x3fe build/default/production/mIO.o
- .debug_str     0x0000000000000000       0x15 build/default/production/mIO.o
- .comment       0x0000000000000000       0x30 build/default/production/mIO.o
- .debug_frame   0x0000000000000000      0x104 build/default/production/mIO.o
  .text          0x0000000000000000        0x0 build/default/production/mUART.o
  .data          0x0000000000000000        0x0 build/default/production/mUART.o
  .bss           0x0000000000000000        0x0 build/default/production/mUART.o
@@ -99,7 +87,7 @@ Discarded input sections
                 0x0000000000000000       0x3a build/default/production/mUART.o
  .text.uart_receive
                 0x0000000000000000        0x8 build/default/production/mUART.o
- .debug_info    0x0000000000000000      0x47f build/default/production/mUART.o
+ .debug_info    0x0000000000000000      0x486 build/default/production/mUART.o
  .debug_abbrev  0x0000000000000000      0x183 build/default/production/mUART.o
  .debug_loc     0x0000000000000000      0x176 build/default/production/mUART.o
  .debug_aranges
@@ -125,7 +113,7 @@ Discarded input sections
                 0x0000000000000000       0x1e build/default/production/mLCD.o
  .text.LCD_write_num
                 0x0000000000000000       0x3a build/default/production/mLCD.o
- .debug_info    0x0000000000000000      0x8ce build/default/production/mLCD.o
+ .debug_info    0x0000000000000000      0x8d5 build/default/production/mLCD.o
  .debug_abbrev  0x0000000000000000      0x1be build/default/production/mLCD.o
  .debug_loc     0x0000000000000000      0x340 build/default/production/mLCD.o
  .debug_aranges
@@ -146,7 +134,7 @@ Discarded input sections
                 0x0000000000000000       0x48 build/default/production/mMotor.o
  .text.Motor_Stop
                 0x0000000000000000       0x68 build/default/production/mMotor.o
- .debug_info    0x0000000000000000      0x698 build/default/production/mMotor.o
+ .debug_info    0x0000000000000000      0x69f build/default/production/mMotor.o
  .debug_abbrev  0x0000000000000000       0x80 build/default/production/mMotor.o
  .debug_loc     0x0000000000000000      0x110 build/default/production/mMotor.o
  .debug_aranges
@@ -175,7 +163,7 @@ Discarded input sections
                 0x0000000000000000       0x7a build/default/production/mLCD_4bit.o
  .text.LCD_goto_4bit
                 0x0000000000000000       0x1e build/default/production/mLCD_4bit.o
- .debug_info    0x0000000000000000      0x90e build/default/production/mLCD_4bit.o
+ .debug_info    0x0000000000000000      0x915 build/default/production/mLCD_4bit.o
  .debug_abbrev  0x0000000000000000      0x1be build/default/production/mLCD_4bit.o
  .debug_loc     0x0000000000000000      0x3c6 build/default/production/mLCD_4bit.o
  .debug_aranges
@@ -190,7 +178,7 @@ Discarded input sections
  .bss           0x0000000000000000        0x0 build/default/production/mExternalInterrupt.o
  .text.init_INT
                 0x0000000000000000       0x5a build/default/production/mExternalInterrupt.o
- .debug_info    0x0000000000000000      0x259 build/default/production/mExternalInterrupt.o
+ .debug_info    0x0000000000000000      0x260 build/default/production/mExternalInterrupt.o
  .debug_abbrev  0x0000000000000000       0x55 build/default/production/mExternalInterrupt.o
  .debug_loc     0x0000000000000000       0xc4 build/default/production/mExternalInterrupt.o
  .debug_aranges
@@ -210,7 +198,7 @@ Discarded input sections
                 0x0000000000000000        0xe build/default/production/mADC.o
  .text.init_Interrupt_ADC
                 0x0000000000000000        0x4 build/default/production/mADC.o
- .debug_info    0x0000000000000000      0x2cb build/default/production/mADC.o
+ .debug_info    0x0000000000000000      0x2d2 build/default/production/mADC.o
  .debug_abbrev  0x0000000000000000       0x96 build/default/production/mADC.o
  .debug_loc     0x0000000000000000       0xa2 build/default/production/mADC.o
  .debug_aranges
@@ -231,7 +219,7 @@ Discarded input sections
                 0x0000000000000000        0x4 build/default/production/mTimer.o
  .text.setOC0Mode
                 0x0000000000000000       0x34 build/default/production/mTimer.o
- .debug_info    0x0000000000000000      0x33a build/default/production/mTimer.o
+ .debug_info    0x0000000000000000      0x341 build/default/production/mTimer.o
  .debug_abbrev  0x0000000000000000       0x8f build/default/production/mTimer.o
  .debug_loc     0x0000000000000000       0x82 build/default/production/mTimer.o
  .debug_aranges
@@ -252,7 +240,7 @@ Discarded input sections
                 0x0000000000000000        0x8 build/default/production/mSPI.o
  .text.spi_receive
                 0x0000000000000000        0x8 build/default/production/mSPI.o
- .debug_info    0x0000000000000000      0x2da build/default/production/mSPI.o
+ .debug_info    0x0000000000000000      0x2e1 build/default/production/mSPI.o
  .debug_abbrev  0x0000000000000000       0x80 build/default/production/mSPI.o
  .debug_loc     0x0000000000000000       0x57 build/default/production/mSPI.o
  .debug_aranges
@@ -265,16 +253,14 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build/default/production/mTWI.o
  .data          0x0000000000000000        0x0 build/default/production/mTWI.o
  .bss           0x0000000000000000        0x0 build/default/production/mTWI.o
+ .text.TWI_start
+                0x0000000000000000       0x34 build/default/production/mTWI.o
+ .text.TWI_stop
+                0x0000000000000000        0xc build/default/production/mTWI.o
+ .text.TWI_write
+                0x0000000000000000       0x20 build/default/production/mTWI.o
  .text.TWI_read
                 0x0000000000000000        0xe build/default/production/mTWI.o
- .text.TWI_init_slave
-                0x0000000000000000        0x8 build/default/production/mTWI.o
- .text.TWI_slave_listen
-                0x0000000000000000       0x2c build/default/production/mTWI.o
- .text.TWI_slave_write
-                0x0000000000000000       0x10 build/default/production/mTWI.o
- .text.TWI_slave_read
-                0x0000000000000000       0x18 build/default/production/mTWI.o
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3.o)
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3.o)
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3.o)
@@ -723,6 +709,7 @@ END GROUP
  *(.comment)
  .comment       0x0000000000000000       0x2f build/default/production/main.o
                                          0x30 (size before relaxing)
+ .comment       0x000000000000002f       0x30 build/default/production/mIO.o
  .comment       0x000000000000002f       0x30 build/default/production/mTWI.o
 
 .stack.descriptors.hdr
@@ -745,49 +732,57 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x0000000000000000       0x80
+.debug_aranges  0x0000000000000000      0x110
  *(.debug_aranges)
  .debug_aranges
                 0x0000000000000000       0x20 build/default/production/main.o
  .debug_aranges
-                0x0000000000000020       0x60 build/default/production/mTWI.o
+                0x0000000000000020       0x90 build/default/production/mIO.o
+ .debug_aranges
+                0x00000000000000b0       0x60 build/default/production/mTWI.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000      0xc44
+.debug_info     0x0000000000000000     0x121c
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000      0x4e6 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_info    0x00000000000004e6      0x38b build/default/production/main.o
- .debug_info    0x0000000000000871      0x3d3 build/default/production/mTWI.o
+ .debug_info    0x00000000000004e6      0x325 build/default/production/main.o
+ .debug_info    0x000000000000080b      0x637 build/default/production/mIO.o
+ .debug_info    0x0000000000000e42      0x3da build/default/production/mTWI.o
 
-.debug_abbrev   0x0000000000000000      0x6a4
+.debug_abbrev   0x0000000000000000      0x7cf
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x4a3 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_abbrev  0x00000000000004a3      0x103 build/default/production/main.o
- .debug_abbrev  0x00000000000005a6       0xfe build/default/production/mTWI.o
+ .debug_abbrev  0x00000000000004a3       0xa8 build/default/production/main.o
+ .debug_abbrev  0x000000000000054b      0x186 build/default/production/mIO.o
+ .debug_abbrev  0x00000000000006d1       0xfe build/default/production/mTWI.o
 
-.debug_line     0x0000000000000000      0x451
+.debug_line     0x0000000000000000      0x810
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x119 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_line    0x0000000000000119       0xfd build/default/production/main.o
- .debug_line    0x0000000000000216      0x23b build/default/production/mTWI.o
+ .debug_line    0x0000000000000119       0xbe build/default/production/main.o
+ .debug_line    0x00000000000001d7      0x3fe build/default/production/mIO.o
+ .debug_line    0x00000000000005d5      0x23b build/default/production/mTWI.o
 
-.debug_frame    0x0000000000000000       0xc8
+.debug_frame    0x0000000000000000      0x1cc
  *(.debug_frame)
  .debug_frame   0x0000000000000000       0x24 build/default/production/main.o
- .debug_frame   0x0000000000000024       0xa4 build/default/production/mTWI.o
+ .debug_frame   0x0000000000000024      0x104 build/default/production/mIO.o
+ .debug_frame   0x0000000000000128       0xa4 build/default/production/mTWI.o
 
-.debug_str      0x0000000000000000      0x1cf
+.debug_str      0x0000000000000000      0x211
  *(.debug_str)
  .debug_str     0x0000000000000000      0x196 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_str     0x0000000000000196       0x2e build/default/production/main.o
- .debug_str     0x00000000000001c4        0xb build/default/production/mTWI.o
+ .debug_str     0x0000000000000196       0x5b build/default/production/main.o
+ .debug_str     0x00000000000001f1       0x15 build/default/production/mIO.o
+ .debug_str     0x0000000000000206        0xb build/default/production/mTWI.o
 
-.debug_loc      0x0000000000000000      0x1b6
+.debug_loc      0x0000000000000000      0x6b9
  *(.debug_loc)
- .debug_loc     0x0000000000000000       0x44 build/default/production/main.o
- .debug_loc     0x0000000000000044      0x172 build/default/production/mTWI.o
+ .debug_loc     0x0000000000000000       0x3b build/default/production/main.o
+ .debug_loc     0x000000000000003b      0x50c build/default/production/mIO.o
+ .debug_loc     0x0000000000000547      0x172 build/default/production/mTWI.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -807,14 +802,15 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x0000000000000000       0x60
+.debug_ranges   0x0000000000000000       0xe0
  *(.debug_ranges)
  .debug_ranges  0x0000000000000000       0x10 build/default/production/main.o
- .debug_ranges  0x0000000000000010       0x50 build/default/production/mTWI.o
+ .debug_ranges  0x0000000000000010       0x80 build/default/production/mIO.o
+ .debug_ranges  0x0000000000000090       0x50 build/default/production/mTWI.o
 
 .debug_macro
  *(.debug_macro)
-OUTPUT(dist/default/production/Alex22_IO.X.production.elf elf32-avr)
+OUTPUT(dist/default/production/Alex22_TWI_SLAVE.X.production.elf elf32-avr)
 LOAD linker stubs
 LOAD data_init
 
@@ -823,53 +819,66 @@ LOAD data_init
  .note.gnu.avr.deviceinfo
                 0x0000000000000000       0x3c C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
 
-.text.main      0x000000000000006c       0x4a
- .text.main     0x000000000000006c       0x4a build/default/production/main.o
-                0x000000000000006c                main
+.text.setPortDir
+                0x000000000000006c       0x60
+ .text.setPortDir
+                0x000000000000006c       0x60 build/default/production/mIO.o
+                0x000000000000006c                setPortDir
 
-.text.TWI_start
-                0x00000000000000b6       0x34
- .text.TWI_start
-                0x00000000000000b6       0x34 build/default/production/mTWI.o
-                0x00000000000000b6                TWI_start
+.text.main      0x00000000000000cc       0x34
+ .text.main     0x00000000000000cc       0x34 build/default/production/main.o
+                0x00000000000000cc                main
 
-.text.TWI_write
-                0x00000000000000ea       0x20
- .text.TWI_write
-                0x00000000000000ea       0x20 build/default/production/mTWI.o
-                0x00000000000000ea                TWI_write
+.text.TWI_slave_listen
+                0x0000000000000100       0x2c
+ .text.TWI_slave_listen
+                0x0000000000000100       0x2c build/default/production/mTWI.o
+                0x0000000000000100                TWI_slave_listen
+
+.text.TWI_slave_read
+                0x000000000000012c       0x18
+ .text.TWI_slave_read
+                0x000000000000012c       0x18 build/default/production/mTWI.o
+                0x000000000000012c                TWI_slave_read
+
+.text.TWI_slave_write
+                0x0000000000000144       0x10
+ .text.TWI_slave_write
+                0x0000000000000144       0x10 build/default/production/mTWI.o
+                0x0000000000000144                TWI_slave_write
 
 .text.TWI_init_BitRate
-                0x000000000000010a        0xc
+                0x0000000000000154        0xc
  .text.TWI_init_BitRate
-                0x000000000000010a        0xc build/default/production/mTWI.o
-                0x000000000000010a                TWI_init_BitRate
+                0x0000000000000154        0xc build/default/production/mTWI.o
+                0x0000000000000154                TWI_init_BitRate
 
-.text.TWI_stop  0x0000000000000116        0xc
- .text.TWI_stop
-                0x0000000000000116        0xc build/default/production/mTWI.o
-                0x0000000000000116                TWI_stop
+.text.TWI_init_slave
+                0x0000000000000160        0x8
+ .text.TWI_init_slave
+                0x0000000000000160        0x8 build/default/production/mTWI.o
+                0x0000000000000160                TWI_init_slave
 
-.text           0x0000000000000122        0x4
- .text          0x0000000000000122        0x4 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
-                0x0000000000000122                __vector_1
-                0x0000000000000122                __vector_12
-                0x0000000000000122                __bad_interrupt
-                0x0000000000000122                __vector_6
-                0x0000000000000122                __vector_3
-                0x0000000000000122                __vector_11
-                0x0000000000000122                __vector_13
-                0x0000000000000122                __vector_17
-                0x0000000000000122                __vector_19
-                0x0000000000000122                __vector_7
-                0x0000000000000122                __vector_5
-                0x0000000000000122                __vector_4
-                0x0000000000000122                __vector_9
-                0x0000000000000122                __vector_2
-                0x0000000000000122                __vector_15
-                0x0000000000000122                __vector_8
-                0x0000000000000122                __vector_14
-                0x0000000000000122                __vector_10
-                0x0000000000000122                __vector_16
-                0x0000000000000122                __vector_18
-                0x0000000000000122                __vector_20
+.text           0x0000000000000168        0x4
+ .text          0x0000000000000168        0x4 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
+                0x0000000000000168                __vector_1
+                0x0000000000000168                __vector_12
+                0x0000000000000168                __bad_interrupt
+                0x0000000000000168                __vector_6
+                0x0000000000000168                __vector_3
+                0x0000000000000168                __vector_11
+                0x0000000000000168                __vector_13
+                0x0000000000000168                __vector_17
+                0x0000000000000168                __vector_19
+                0x0000000000000168                __vector_7
+                0x0000000000000168                __vector_5
+                0x0000000000000168                __vector_4
+                0x0000000000000168                __vector_9
+                0x0000000000000168                __vector_2
+                0x0000000000000168                __vector_15
+                0x0000000000000168                __vector_8
+                0x0000000000000168                __vector_14
+                0x0000000000000168                __vector_10
+                0x0000000000000168                __vector_16
+                0x0000000000000168                __vector_18
+                0x0000000000000168                __vector_20
